@@ -71,3 +71,7 @@ pre.arch { border:1px solid var(--line); padding:24px; overflow-x:auto; color:va
 @media (prefers-reduced-motion:reduce) { .reveal, .cap, .vf { transition:none; } .card:hover .reveal { animation:none; } .blink { animation:none; } }
 
 .term-static { display:block; }
+
+.card.featured { aspect-ratio:auto; min-height:300px; margin-bottom:24px; }
+.card.featured p { max-width:56ch; }
+.card.featured h3 { max-width:24ch; }

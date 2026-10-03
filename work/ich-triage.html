@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICH Triage | Deepak</title>
+<meta name="description" content="Resource-efficient 3D sequential AI pipeline for acute intracranial hemorrhage subtype triage and rule-out on head CT.">
+<meta name="theme-color" content="#020202">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&amp;family=Unbounded:wght@900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="wrap" style="padding-bottom:120px">
+  <nav aria-label="Breadcrumb"><a href="../index.html" class="back">cd ..</a><span class="ac">Current project</span></nav>
+  <h1 class="display h1" style="margin:48px 0 24px;font-size:clamp(32px,7vw,96px)">Resource-Efficient 3D Sequential AI Pipeline for Acute Intracranial Hemorrhage Subtype Triage and Rule-Out</h1>
+  <p style="max-width:60ch">A head CT pipeline that reads a scan as an ordered sequence of slices, flags acute intracranial hemorrhage and its subtype, and supports triage and rule-out decisions while staying within a small compute budget.</p>
+
+  <div class="block"><h2 class="display">Problem</h2><p style="max-width:60ch">Emergency radiology queues need fast answers on head CT. A system that rules out hemorrhage reliably lets clinicians prioritize the scans that need attention first. Full 3D models cost memory and training time, so this project tests how far a lighter slice-then-sequence design goes.</p></div>
+
+  <div class="block"><h2 class="display">System architecture</h2><pre class="arch">[Head CT series] --&gt; [Preprocess: windowing, skull strip, slice alignment]
+                            |
+                  [Slice-level CNN encoder]
+                            |
+                  [Sequence model across slices]
+                            |
+        [Study-level output: ICH present / subtype / rule-out]
+                            |
+                   [Triage decision + Grad-CAM]</pre></div>
+  <div class="block"><h2 class="display">Pipeline</h2><ol class="steps"><li>Take head CT series from the RSNA Intracranial Hemorrhage Detection dataset</li><li>Apply brain windowing, skull stripping and slice alignment</li><li>Encode each slice with a CNN backbone (ResNet18 and DenseNet-121 compared)</li><li>Model slice order with a sequence network and attention pooling</li><li>Predict hemorrhage and subtype at the study level</li><li>Map scores to a triage decision, with a rule-out threshold</li><li>Check what the model looked at with Grad-CAM</li></ol></div>
+  <div class="block"><h2 class="display">Tech stack</h2><div class="chips"><span>Python</span><span>PyTorch</span><span>MONAI</span><span>Kaggle GPU</span><span>Grad-CAM</span></div></div>
+  <div class="block"><h2 class="display">Results</h2><div class="metrics"><div><span class="dim">AUROC</span><strong>TBD</strong></div><div><span class="dim">Sensitivity (rule-out)</span><strong>TBD</strong></div><div><span class="dim">Negative predictive value</span><strong>TBD</strong></div><div><span class="dim">GPU memory</span><strong>TBD</strong></div><div><span class="dim">Train time</span><strong>TBD</strong></div><div><span class="dim">Patients</span><strong>TBD</strong></div></div></div>
+  <div class="block"><h2 class="display">Status</h2><p style="max-width:60ch">In progress. Backbone comparison and scaling the training set are under way.</p></div>
+</main>
+<div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i><b>EXECUTE</b></div>
+<script src="../script.js"></script>
+</body>
+</html>

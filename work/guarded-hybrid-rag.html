@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guarded Hybrid RAG | Deepak</title>
+<meta name="description" content="Retrieval-augmented generation that combines keyword and vector search, with guardrails on input and output.">
+<meta name="theme-color" content="#020202">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&amp;family=Unbounded:wght@900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="wrap" style="padding-bottom:120px">
+  <nav aria-label="Breadcrumb"><a href="../index.html" class="back">cd ..</a><span class="dim">Retrieval + guardrails</span></nav>
+  <h1 class="display h1" style="margin:48px 0 24px">Guarded Hybrid RAG</h1>
+  <p style="max-width:56ch">Retrieval-augmented generation that combines keyword and vector search, with guardrails on input and output.</p>
+
+  <div class="block"><h2 class="display">System architecture</h2><pre class="arch">[Query] --&gt; [Input guard] --&gt; [Hybrid retriever: keyword + vector] --&gt; [LLM] --&gt; [Output guard] --&gt; [Answer]</pre></div>
+  <div class="block"><h2 class="display">Pipeline</h2><ol class="steps"><li>Ingest and chunk documents</li><li>Index for keyword and vector search</li><li>Screen the query</li><li>Retrieve and rerank</li><li>Generate a grounded answer</li><li>Check the output before returning it</li></ol></div>
+  <div class="block"><h2 class="display">Tech stack</h2><div class="chips"><span>Python</span><span>LLM</span><span>Vector DB</span></div></div>
+  <div class="block"><h2 class="display">Metrics</h2><div class="metrics"><div><span class="dim">Recall@k</span><strong>TBD</strong></div><div><span class="dim">Faithfulness</span><strong>TBD</strong></div><div><span class="dim">p95 latency</span><strong>TBD</strong></div><div><span class="dim">Eval cases</span><strong>TBD</strong></div></div></div>
+</main>
+<div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i><b>EXECUTE</b></div>
+<script src="../script.js"></script>
+</body>
+</html>
