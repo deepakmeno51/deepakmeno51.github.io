@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Air Record | Deepak</title>
+<meta name="description" content="Anonymous public noticeboard for pollution reports, mapped by area.">
+<meta name="theme-color" content="#020202">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&amp;family=Unbounded:wght@900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="wrap" style="padding-bottom:120px">
+  <nav aria-label="Breadcrumb"><a href="../index.html" class="back">cd ..</a><span class="dim">Full-stack data platform</span></nav>
+  <h1 class="display h1" style="margin:48px 0 24px">Air Record</h1>
+  <p style="max-width:56ch">Anonymous public noticeboard for pollution reports, mapped by area.</p>
+
+  <div class="block"><h2 class="display">System architecture</h2><pre class="arch">[Report form] --&gt; [Flask API] --&gt; [Moderation] --&gt; [Postgres]
+                                                    |
+                                          [Next.js map + feed]</pre></div>
+  <div class="block"><h2 class="display">Data pipeline</h2><ol class="steps"><li>Accept anonymous report</li><li>Strip metadata</li><li>Moderate</li><li>Geocode to area</li><li>Publish to feed</li></ol></div>
+  <div class="block"><h2 class="display">Tech stack</h2><div class="chips"><span>Python</span><span>Flask</span><span>Next.js</span><span>Postgres</span></div></div>
+  <div class="block"><h2 class="display">Model metrics</h2><div class="metrics"><div><span class="dim">Reports</span><strong>0</strong></div><div><span class="dim">Moderation F1</span><strong>0.00</strong></div><div><span class="dim">p95 latency</span><strong>0 ms</strong></div><div><span class="dim">Areas</span><strong>0</strong></div></div></div>
+</main>
+<div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i><b>EXECUTE</b></div>
+<script src="../script.js"></script>
+</body>
+</html>
